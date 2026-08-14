@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Novo Horizonte Promotora — LP WhatsApp</title>
+
+    <!-- FAVICON / ÍCONE DO SITE -->
+    <link rel="icon" type="image/png" href="img/Profile_NHP_Site.png" />
+    <link rel="apple-touch-icon" href="img/Profile_NHP_Site.png" />
+    <link rel="shortcut icon" href="img/Profile_NHP_Site.png" />
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --royal: #004bd4;
+        --deep: #0b3787;
+        --sky: #53b4f2;
+        --white: #ffffff;
+        --text: #e9f0ff;
+        --card-bg: rgba(7, 33, 94, 0.85);
+        --card-border: rgba(255, 255, 255, 0.22);
+        --shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+        --btn-text: #072b61;
+        --accent: #8a05be;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: "Montserrat", sans-serif;
+        color: var(--white);
+        background: radial-gradient(
+            circle at top,
+            var(--sky) 0,
+            transparent 55%
+          ),
+          linear-gradient(180deg, var(--royal), #003bb0 60%, var(--deep));
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 28px 12px 40px;
+      }
+
+      .page {
+        width: 100%;
+        max-width: 540px;
+      }
+
+      .logo {
+        display: block;
+        margin: 0 auto 22px;
+        height: 70px;
+      }
+
+      /* Fundo do bloco principal */
+      .shell {
+        background: url("img/fundo_NHP_1.png") center/cover no-repeat,
+          var(--card-bg);
+        border-radius: 28px;
+        border: 1px solid var(--card-border);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+        padding: 28px 26px 32px;
+      }
+
+      /* BLOCO INFLUENCER */
+      .influencer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 18px;
+        padding-bottom: 8px;
+        text-align: center;
+        background: transparent;
+        border: none;
+      }
+
+      .avatar-wrapper {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .avatar {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgba(255, 255, 255, 0.95);
+      }
+
+      .influencer-name {
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 14px;
+        margin-top: 4px;
+        justify-content: center;
+      }
+
+      .social-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.14s ease, background 0.14s ease;
+      }
+
+      .social-icon img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+      }
+
+      .social-icon:hover {
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+      }
+
+      /* Badge centralizado */
+      .badge {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: var(--text);
+        margin: 0 auto 16px;
+      }
+
+      .badge-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #25d366;
+        box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.25);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 30px;
+        text-align: center;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 15px;
+        color: var(--text);
+        margin-bottom: 22px;
+        font-weight: 500;
+      }
+
+      .btn {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        padding: 16px 18px;
+        margin-top: 14px;
+        border: none;
+        border-radius: 20px;
+        text-decoration: none;
+        background: var(--white);
+        color: var(--btn-text);
+        font-weight: 700;
+        font-size: 15px;
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.14s ease, box-shadow 0.14s ease;
+      }
+
+      .btn img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 38px rgba(0, 0, 0, 0.4);
+        background: #f5f7ff;
+      }
+
+      .disclaimer {
+        margin: 24px 4px 0;
+        opacity: 0.78;
+        font-size: 12px;
+        text-align: center;
+        color: var(--text);
+      }
+
+      /* Prova Social */
+      .social-proof {
+        margin-top: 18px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .proof-item {
+        flex: 1;
+        min-width: 150px;
+        max-width: 33%;
+        background: rgba(0, 0, 0, 0.18);
+        border-radius: 16px;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+      }
+
+      .proof-item img {
+        max-width: 100%;
+        max-height: 60px;
+        object-fit: contain;
+      }
+
+      @media (max-width: 480px) {
+        .proof-item {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+      <!-- LOGO -->
+      <img
+        src="img/Logo_Horizontal_NHP_Branco.png"
+        class="logo"
+        alt="Novo Horizonte Promotora"
+      />
+
+      <div class="shell">
+        <!-- INFLUENCER (foto + nome + ícones) -->
+        <section class="influencer">
+          <div class="avatar-wrapper">
+            <img src="img/luensina_perfil.png" alt="LuEnsina" class="avatar" />
+          </div>
+
+          <p class="influencer-name">LuEnsina</p>
+
+          <div class="social-icons">
+            <a href="https://www.instagram.com/luanadutraa/" class="social-icon"
+              ><img src="img/icones-insta.png"
+            /></a>
+            <a href="https://www.youtube.com/@luanadutraa/" class="social-icon"
+              ><img src="img/icones-yt.png"
+            /></a>
+            <a href="https://www.tiktok.com/@luanaensina" class="social-icon"
+              ><img src="img/logotiktok.png"
+            /></a>
+            <a href="mailto:meajuda@nhpromotora.com" class="social-icon"
+              ><img src="img/icones-email.png"
+            /></a>
+          </div>
+        </section>
+
+        <h1>Novo Horizonte</h1>
+        <p class="subtitle">Soluções financeiras pensadas para você.</p>
+
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span><strong>ATENDIMENTO 100% VIA WHATSAPP</strong></span>
+        </div>
+
+        <!-- BOTÕES -->
+        <a class="btn" id="btnBolsaFamilia" href="#"
+          ><img src="img/whatsapp.png" /><span
+            >Empréstimo do Bolsa Família</span
+          ></a
+        >
+        <a class="btn" href="https://curt.link/luensinainss"
+          ><img src="img/whatsapp.png" /><span
+            >Consignado para aposentados do INSS</span
+          ></a
+        >
+        <a class="btn" href="https://luclt.com"
+          ><img src="img/whatsapp.png" /><span>Simular empréstimo para CLT</span></a
+        >
+        <a class="btn" href="https://curt.link/luensinafgts"
+          ><img src="img/whatsapp.png" /><span>Antecipe seu FGTS</span></a
+        >
+        <a class="btn" href="https://curt.link/luensinagv"
+          ><img src="img/whatsapp.png" /><span
+            >Simular crédito com garantia veicular</span
+          ></a
+        >
+
+        <p class="disclaimer">
+          © Novo Horizonte Promotora © 2025 Todos os direitos reservados<br />
+          CNPJ: 43.758.973/0001-05.
+        </p>
+      </div>
+
+      <!-- FAIXA DE PROVA SOCIAL -->
+      <section class="social-proof">
+        <div class="proof-item"><img src="img/bg-stars.png" /></div>
+        <div class="proof-item"><img src="img/bg-avaliacoes.png" /></div>
+        <div class="proof-item"><img src="img/bg-consumidores.png" /></div>
+      </section>
+    </main>
+
+    <script>
+      // Randomização do link do Bolsa Família
+      const links = [
+          "https://curt.link/luensinaform",
+          "https://curt.link/luensinaform2",
+          "https://curt.link/luensinaform3",
+          "https://curt.link/luensinaform4",
+          "https://curt.link/luensinaform5",
+          "https://curt.link/luensinaform6",
+          "https://curt.link/luensinaform7",
+          "https://curt.link/luensinaform8",
+          "https://curt.link/luensinaform9",
+          "https://curt.link/luensinaform10"
+      ];
+
+      const randomIndex = Math.floor(Math.random() * links.length);
+      document.getElementById("btnBolsaFamilia").href = links[randomIndex];
+    </script>
+  </body>
+</html>
